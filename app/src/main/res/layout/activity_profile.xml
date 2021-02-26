@@ -45,7 +45,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/change_img"
+        android:id="@+id/change_img_fab"
         android:layout_margin="16dp"
         app:fabSize="normal"
         app:layout_anchor="@id/profile_page_appbar"
@@ -53,12 +53,13 @@
         android:src="@drawable/ic_baseline_camera"/>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/allStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
         <include layout="@layout/profile_page_content"/>
-
     </androidx.core.widget.NestedScrollView>
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
