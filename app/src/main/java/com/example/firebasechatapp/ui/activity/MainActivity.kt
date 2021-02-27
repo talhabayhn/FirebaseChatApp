@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.example.firebasechatapp.R
+import com.example.firebasechatapp.ui.adapter.ViewPagerAdapter
+import com.example.firebasechatapp.ui.fragment.ChatsFragment
+import com.example.firebasechatapp.ui.fragment.FriendsFragment
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -38,5 +41,15 @@ class MainActivity : AppCompatActivity() {
 
     private  fun setupUI(){
         setSupportActionBar(main_toolbar)
+        setupViewPager()
+        main_tabs.setupWithViewPager(main_viewPager)
+    }
+    private fun setupViewPager(){
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.apply {
+            addFragment(ChatsFragment(),"Messages")
+            addFragment(FriendsFragment(),"Friends")
+        }
+        main_viewPager.adapter= adapter
     }
 }

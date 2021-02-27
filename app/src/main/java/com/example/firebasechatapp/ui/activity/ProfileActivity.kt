@@ -42,7 +42,7 @@ class ProfileActivity : AppCompatActivity() {
 
         change_img_fab.setOnClickListener {changeImage()}
 
-        allStatus.setOnClickListener {showStatusChangeDialog()}
+        statusMain.setOnClickListener {showStatusChangeDialog()}
 
     }
 
@@ -143,6 +143,7 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun showStatusChangeDialog(){
+
         val dialogBuilder = AlertDialog.Builder(this)
         val dialogView = layoutInflater.inflate(R.layout.custom_dialog2, null)
         dialogBuilder.setView(dialogView)
